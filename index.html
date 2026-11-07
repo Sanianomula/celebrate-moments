@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebrate Moments 💗</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+    <a class="brand" href="#home">Celebrate Moments 💗</a>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#creator">Create a Surprise</a>
+        <a href="#poster-maker">Free Poster</a>
+        <a href="#pricing">Pricing</a>
+    </nav>
+</header>
+
+<main>
+
+<section id="home" class="hero page-section">
+    <p class="eyebrow">LITTLE SURPRISES. BIG FEELINGS.</p>
+    <h1>Make their day unforgettable.</h1>
+
+    <p>Create a personal surprise with a letter, photos and music.</p>
+
+    <a class="button primary" href="#creator">Create a Surprise 💌</a>
+    <a class="button secondary" href="#poster-maker">Free Poster 🎨</a>
+</section>
+
+
+<section id="creator" class="creator page-section">
+
+    <h2>Create Your Surprise 💗</h2>
+
+    <form id="surpriseForm">
+
+        <label>Recipient's Name
+            <input id="recipient" required placeholder="Friend's name">
+        </label>
+
+        <label>Your Name
+            <input id="sender" required placeholder="Your name">
+        </label>
+
+        <label>Relationship
+            <select id="relationship">
+                <option>Best friend</option>
+                <option>Friend</option>
+                <option>Partner</option>
+                <option>Family</option>
+                <option>Sibling</option>
+                <option>Other</option>
+            </select>
+        </label>
+
+        <label>Occasion
+            <select id="occasion">
+                <option>Birthday</option>
+                <option>Anniversary</option>
+                <option>Love</option>
+                <option>Friendship</option>
+                <option>Graduation</option>
+                <option>Achievement</option>
+                <option>Festival</option>
+            </select>
+        </label>
+
+        <label>Theme
+            <select id="theme">
+                <option value="pink">Rose Pink</option>
+                <option value="lavender">Lavender</option>
+                <option value="peach">Peach</option>
+                <option value="night">Night Magic</option>
+            </select>
+        </label>
+
+        <label>Letter Style
+            <select id="letterStyle">
+                <option value="classic">Vintage Letter</option>
+                <option value="soft">Soft and Romantic</option>
+                <option value="bold">Bright and Playful</option>
+            </select>
+        </label>
+
+        <label>Your Personal Message
+            <textarea id="message" required rows="5"
+                placeholder="Write something from your heart..."></textarea>
+        </label>
+
+        <label>Add Up to 5 Photos
+            <input
+    type="file"
+    id="photos"
+    accept="image/*"
+    multiple
+>
+        </label>
+
+        <div id="photoPreview"></div>
+        <p id="photoCount">No photos selected.</p>
+
+        <!-- MUSIC EDITOR -->
+
+        ```html
+<!-- MUSIC EDITOR: AUDIO WAVEFORM TRIMMER -->
+
+<div class="music-editor">
+
+    <h3>🎵 Customize Your Music</h3>
+    <p>Upload a song and select your favourite part, just like Instagram Stories.</p>
+
+    <label for="music">Choose a Song</label>
+    <input type="file" id="music" accept="audio/*">
+
+    <div class="music-player">
+
+        <div class="music-info">
+            <span class="music-icon">🎵</span>
+            <div>
+                <strong id="songName">Your selected song</strong>
+                <small id="musicStatus">No song selected yet.</small>
+            </div>
+        </div>
+
+        <audio id="songPreview" preload="metadata"></audio>
+
+        <!-- WAVEFORM -->
+        <div class="waveform-wrapper" id="waveformWrapper">
+            <div class="waveform-bars" id="waveformBars"></div>
+
+            <div class="selection-box" id="selectionBox">
+                <div class="selection-bars" id="selectionBars"></div>
+            </div>
+        </div>
+
+        <!-- TIME -->
+        <div class="music-time">
+            <span id="currentTime">0:00</span>
+            <span id="totalTime">0:00</span>
+        </div>
+
+        <!-- PLAYBACK -->
+        <div class="controls">
+            <button type="button" id="playSong">▶ Play Selected Part</button>
+            <button type="button" id="pauseSong">⏸ Pause</button>
+        </div>
+
+        <!-- START AND END -->
+        <div class="trim-section">
+
+            <label for="songStart">
+                Start Time: <span id="startLabel">0:00</span>
+            </label>
+            <input type="range" id="songStart"
+                   min="0" max="30" value="0" step="0.1">
+
+            <label for="songEnd">
+                End Time: <span id="endLabel">0:30</span>
+            </label>
+            <input type="range" id="songEnd"
+                   min="1" max="30" value="30" step="0.1">
+
+        </div>
+
+        <!-- VOLUME -->
+        <div class="volume-section">
+            <label for="musicVolume">🔊 Music Volume</label>
+            <input type="range" id="musicVolume"
+                   min="0" max="1" step="0.1" value="0.7">
+        </div>
+
+        <button type="button" id="useMusic" class="use-music-button">
+            💗 Use This Music
+        </button>
+
+    </div>
+
+</div>
+
+
+        <button class="button primary wide" type="submit">
+            Create My Surprise ✨
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- SURPRISE EXPERIENCE -->
+
+<section id="experience" class="experience hidden">
+
+    <section id="envelopeStage" class="experience-stage theme-pink">
+
+        <h2 id="envelopeHeading">You have a surprise!</h2>
+        <p id="envelopeName"></p>
+
+        <div class="envelope-art">
+            💌
+        </div>
+
+        <button id="openEnvelopeBtn" class="button primary" type="button">
+            Open Your Letter 💌
+        </button>
+
+    </section>
+
+
+    <section id="letterStage" class="experience-stage theme-peach hidden">
+
+        <h2 id="letterOccasion">A Special Note</h2>
+
+        <h3>Dear <span id="letterRecipient"></span>,</h3>
+
+        <p id="letterMessage"></p>
+
+        <p>
+            With love,
+            <span id="letterSender"></span> 💗
+        </p>
+
+        <audio id="experienceMusic" controls class="audio-player hidden"></audio>
+
+        <button id="toGalleryBtn" class="button primary" type="button">
+            See Our Memories 📸
+        </button>
+
+    </section>
+
+
+    <section id="galleryStage" class="experience-stage theme-lavender hidden">
+
+        <h2>Our Memories Together</h2>
+
+        <p id="galleryEmpty"></p>
+
+        <div id="memoryGallery" class="memory-gallery"></div>
+
+        <button id="toCakeBtn" class="button primary" type="button">
+            Next Surprise 🎂
+        </button>
+
+    </section>
+
+
+    <section id="cakeStage" class="experience-stage theme-pink hidden">
+
+        <h2 id="cakeHeading">A Celebration Just for You!</h2>
+
+        <div id="birthdayCake" class="cake-art">
+            🎂
+        </div>
+
+        <p id="cakeMessage">Make a wish!</p>
+
+        <button id="cutCakeBtn" class="button secondary" type="button">
+            Cut the Cake 🎂
+        </button>
+
+        <button id="blowCandleBtn" class="button secondary" type="button">
+            Blow Candles 🌬️
+        </button>
+
+        <button id="toFinalBtn" class="button primary" type="button">
+            Final Surprise 🎉
+        </button>
+
+    </section>
+
+
+    <section id="finalStage" class="experience-stage theme-lavender hidden">
+
+        <h2 id="finalHeading">You Are Special! 💗</h2>
+
+        <p id="finalMessage"></p>
+
+        <button id="downloadGiftBtn" class="button primary" type="button">
+            Download Keepsake 💌
+        </button>
+
+        <button id="shareGiftBtn" class="button secondary" type="button">
+            Share Surprise 🔗
+        </button>
+
+        <div id="shareResult" class="hidden">
+
+            <h3>Your Surprise Link</h3>
+
+            <input id="shareLink" type="url" readonly>
+
+            <button id="copyLinkBtn" class="button secondary" type="button">
+                Copy Link
+            </button>
+
+            <button id="createGiftQRBtn" class="button secondary" type="button">
+                Create QR Code
+            </button>
+
+            <div id="shareQR"></div>
+
+            <p id="shareStatus"></p>
+
+        </div>
+
+        <div id="checkoutSection">
+            <h3>Keep This Beautiful Memory 💝</h3>
+            <p>Prototype Price: ₹45</p>
+
+            <button id="checkoutBtn" class="button primary" type="button">
+                Unlock My Surprise — ₹45
+            </button>
+
+            <p id="paymentStatus"></p>
+        </div>
+
+        <button id="startOverBtn" class="button secondary" type="button">
+            Create Another Surprise
+        </button>
+
+    </section>
+
+</section>
+
+
+<!-- FREE POSTER -->
+
+<section id="poster-maker" class="poster-section page-section">
+
+    <h2>Make a Celebration Poster 🎨</h2>
+
+    <form id="posterForm">
+
+        <label>Name
+            <input id="posterNameInput" placeholder="Name on poster">
+        </label>
+
+        <label>From
+            <input id="posterSenderInput" placeholder="Your name">
+        </label>
+
+        <label>Occasion
+            <select id="posterOccasionInput">
+                <option>Birthday</option>
+                <option>Anniversary</option>
+                <option>Friendship</option>
+                <option>Love</option>
+                <option>Graduation</option>
+                <option>Festival</option>
+            </select>
+        </label>
+
+        <label>Message
+            <textarea id="posterQuoteInput">You make the world brighter just by being in it.</textarea>
+        </label>
+
+        <label>Theme
+            <select id="posterThemeInput">
+                <option value="poster-rose">Rose Garden</option>
+                <option value="poster-lavender">Lavender</option>
+                <option value="poster-peach">Peach</option>
+                <option value="poster-night">Night Magic</option>
+            </select>
+        </label>
+
+        <label>Illustration
+            <select id="posterCharacterInput">
+                <option value="girl">Girl</option>
+                <option value="boy">Boy</option>
+                <option value="girlFriends">Girl Friends</option>
+                <option value="boyFriends">Boy Friends</option>
+                <option value="bestFriends">Best Friends</option>
+                <option value="couple">Couple</option>
+            </select>
+        </label>
+
+        <label>Public Surprise Link
+            <input id="posterUrlInput" type="url"
+                placeholder="https://yourwebsite.com">
+        </label>
+
+        <button id="updatePosterBtn" type="button" class="button primary">
+            Update Poster
+        </button>
+
+        <button id="downloadPosterBtn" type="button" class="button secondary">
+            Download Poster
+        </button>
+
+        <p id="posterStatus"></p>
+
+    </form>
+
+    <div id="posterPreview" class="poster-preview poster-rose">
+
+        <p id="posterCharacterArt">👩🏻‍🦰</p>
+
+        <p id="posterOccasion">Birthday Wishes</p>
+
+        <h3 id="posterName">A Special Person</h3>
+
+        <p id="posterQuote">
+            You make the world brighter just by being in it.
+        </p>
+
+        <p id="posterSender">With love 💗</p>
+
+        <div id="posterQRWrap" class="hidden">
+            <div id="posterQR"></div>
+        </div>
+
+        <p>MADE WITH LOVE · CELEBRATE MOMENTS</p>
+
+    </div>
+
+</section>
+
+
+<!-- PRICING -->
+
+<section id="pricing" class="pricing page-section">
+
+    <h2>Choose Your Little Magic 💗</h2>
+
+    <div class="pricing-grid">
+
+        <article class="price-card">
+            <h3>Free Poster</h3>
+            <p class="price">₹0</p>
+            <p>Create and download your own celebration poster.</p>
+        </article>
+
+        <article class="price-card featured">
+            <h3>Surprise Gift</h3>
+            <p class="price">₹45</p>
+            <p>Personalised celebration experience.</p>
+            <small>Payments are not connected yet.</small>
+        </article>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 Celebrate Moments · Made with 💗</p>
+</footer>
+
+<!-- QR Code Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<!-- Poster Download Library -->
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+<!-- Supabase Library: Load BEFORE script.js -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- Load your JavaScript ONLY ONCE -->
+<script src="script.js"></script>
+
+</body>
+</html>
+

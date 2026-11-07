@@ -1,0 +1,1295 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+/* =========================================
+   1. GLOBAL STYLES
+========================================= */
+
+:root {
+    --ink: #392b40;
+    --muted: #756779;
+    --pink: #f7b7cd;
+    --rose: #bd567d;
+    --lavender: #e8ddff;
+    --cream: #fff8f1;
+    --white: #ffffff;
+    --shadow: 0 18px 50px rgba(86, 51, 85, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 12px;
+}
+
+body {
+    margin: 0;
+    background: #fffafc;
+    color: var(--ink);
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+.brand {
+    font-family: 'Playfair Display', Georgia, serif;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: clamp(2.8rem, 6vw, 5.4rem);
+    margin: 0.3em 0;
+}
+
+h2 {
+    font-size: clamp(2.1rem, 4vw, 3.5rem);
+    margin: 0.3em 0;
+}
+
+h3 {
+    font-size: 1.55rem;
+}
+
+p {
+    margin: 0.7em 0;
+}
+
+a {
+    color: inherit;
+}
+
+/* =========================================
+   2. HEADER AND NAVIGATION
+========================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 15px clamp(18px, 5vw, 70px);
+    background: #fffaf3ee;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #f3e5ec;
+}
+
+.brand {
+    text-decoration: none;
+    font-size: 1.35rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.brand span,
+h1 span {
+    color: var(--rose);
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+nav a:hover {
+    color: var(--rose);
+}
+
+/* =========================================
+   3. SECTIONS AND HERO
+========================================= */
+
+.page-section {
+    padding: clamp(55px, 8vw, 110px) clamp(18px, 6vw, 90px);
+}
+
+.hero {
+    min-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 15% 20%, #fff 0 5%, transparent 30%),
+        linear-gradient(135deg, #ffe5ee, #f1e6ff 55%, #fff1df);
+}
+
+.hero-copy {
+    max-width: 760px;
+    font-size: 1.2rem;
+    color: var(--muted);
+    margin: 10px auto 28px;
+}
+
+.eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    color: var(--rose);
+    text-transform: uppercase;
+}
+
+.hero-hearts {
+    font-size: 2rem;
+    margin-top: 35px;
+    letter-spacing: 0.4em;
+    animation: float 4s ease-in-out infinite;
+}
+
+/* =========================================
+   4. BUTTONS
+========================================= */
+
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 0;
+    border-radius: 999px;
+    padding: 15px 25px;
+    min-height: 56px;
+    font: 700 1rem 'DM Sans', Arial, sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px #9e5c7b2b;
+}
+
+.primary {
+    background: linear-gradient(120deg, #c65e88, #986dc4);
+    color: white;
+}
+
+.secondary {
+    background: #fff;
+    color: #8d4f77;
+    border: 1px solid #e9cbdc;
+}
+
+.wide {
+    width: 100%;
+    margin-top: 18px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 18px 0;
+}
+
+/* =========================================
+   5. CREATION FORM
+========================================= */
+
+.creator {
+    background: #fffafc;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 35px;
+}
+
+.section-heading > p:last-child {
+    color: var(--muted);
+    font-size: 1.08rem;
+}
+
+.form-card {
+    width: min(100%, 980px);
+    margin: 0 auto;
+    background: white;
+    padding: clamp(22px, 4vw, 48px);
+    border: 1px solid #f0dfe8;
+    border-radius: 28px;
+    box-shadow: var(--shadow);
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-weight: 700;
+    margin: 16px 0;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    font: 400 1rem 'DM Sans', Arial, sans-serif;
+    color: var(--ink);
+    padding: 14px 16px;
+    border: 1px solid #e6d5e0;
+    border-radius: 13px;
+    background: #fffdfd;
+    outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #c16e99;
+    box-shadow: 0 0 0 3px #f7dce8;
+}
+
+textarea {
+    resize: vertical;
+}
+
+small,
+.small-status {
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 22px;
+}
+
+.photo-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 14px;
+    margin: 15px 0;
+}
+
+.photo-preview img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* =========================================
+   6. CELEBRATION EXPERIENCE
+========================================= */
+
+.experience {
+    width: 100%;
+}
+
+.experience-stage {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: clamp(28px, 6vw, 80px) clamp(18px, 5vw, 70px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    scroll-margin-top: 0;
+}
+
+#experience.hidden,
+.hidden {
+    display: none !important;
+}
+
+#letterStage {
+    min-height: 100vh;
+    min-height: 100svh;
+    width: 100%;
+    padding-top: clamp(30px, 7vh, 80px);
+    padding-bottom: 50px;
+}
+
+.theme-pink {
+    background: linear-gradient(135deg, #ffe0eb, #f5e3ff 60%, #fff3e4);
+}
+
+.theme-peach {
+    background: linear-gradient(135deg, #fff0df, #fbe0eb, #fff9ec);
+}
+
+.theme-lavender {
+    background: linear-gradient(135deg, #efe5ff, #ffe8f0, #fff5df);
+}
+
+.theme-night {
+    background: linear-gradient(135deg, #27243e, #5c4776, #ad7094);
+    color: white;
+}
+
+.big-name {
+    font-size: clamp(1.7rem, 4vw, 3rem);
+    font-family: 'Playfair Display', serif;
+}
+
+/* =========================================
+   7. ENVELOPE AND LETTER
+========================================= */
+
+.envelope-art {
+    width: min(340px, 75vw);
+    height: 220px;
+    position: relative;
+    margin: 35px auto 25px;
+    filter: drop-shadow(0 18px 20px #7e4b6b2b);
+}
+
+.envelope-art::before {
+    content: '';
+    position: absolute;
+    inset: 30px 0 0;
+    background: #d77d9d;
+    border-radius: 10px;
+    clip-path: polygon(0 0, 50% 48%, 100% 0, 100% 100%, 0 100%);
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    height: 125px;
+    background: #f1b3c9;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    z-index: 3;
+}
+
+.envelope-paper {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 145px;
+    background: #fffaf1;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: #92536f;
+}
+
+.envelope-heart {
+    position: absolute;
+    z-index: 4;
+    left: calc(50% - 20px);
+    top: 100px;
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.letter-card {
+    width: min(900px, 100%);
+    min-height: 380px;
+    padding: clamp(28px, 6vw, 75px);
+    background: #fffaf1;
+    border: 1px solid #e9d4b7;
+    border-radius: 9px;
+    box-shadow: 0 20px 60px #8e637b20;
+    text-align: left;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+    line-height: 2;
+    position: relative;
+}
+
+.letter-card::before {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    border: 1px solid #ecdcc8;
+    pointer-events: none;
+}
+
+.letter-card > * {
+    position: relative;
+}
+
+.letter-occasion {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font: 700 0.8rem 'DM Sans', sans-serif;
+    color: #b36b83;
+}
+
+.signature {
+    margin-top: 40px;
+}
+
+/* =========================================
+   8. AUDIO AND PHOTO GALLERY
+========================================= */
+
+.audio-player {
+    width: min(450px, 100%);
+    margin: 22px;
+}
+
+.memory-gallery {
+    width: min(1250px, 100%);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin: 30px 0;
+}
+
+.memory-item {
+    padding: 13px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transform: rotate(-1deg);
+    min-width: 0;
+}
+
+.memory-item:nth-child(even) {
+    transform: rotate(1deg);
+}
+
+.memory-item img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 13px;
+}
+
+#memoryGallery .memory-item img {
+    width: 100%;
+    height: auto;
+    max-height: 72vh;
+    object-fit: contain;
+    background: #fff;
+}
+
+.memory-caption {
+    font-size: 1.05rem;
+    margin: 10px 0 3px;
+}
+
+/* =========================================
+   9. CAKE AND CANDLES
+========================================= */
+
+.cake-art {
+    position: relative;
+    width: 300px;
+    height: 255px;
+    margin: 35px auto 20px;
+}
+
+.cake-layer {
+    position: absolute;
+    left: 25px;
+    width: 250px;
+    border-radius: 18px 18px 28px 28px;
+    background: repeating-linear-gradient(
+        0deg,
+        #e98db0 0 25px,
+        #fff0f4 25px 39px
+    );
+    border: 5px solid #fff4f6;
+}
+
+.layer-one {
+    height: 80px;
+    bottom: 38px;
+}
+
+.layer-two {
+    height: 70px;
+    bottom: 108px;
+    left: 45px;
+    width: 210px;
+    background: repeating-linear-gradient(
+        0deg,
+        #c6a1ee 0 24px,
+        #fff2fa 24px 37px
+    );
+}
+
+.cake-top {
+    position: absolute;
+    z-index: 2;
+    left: 45px;
+    top: 55px;
+    width: 210px;
+    height: 45px;
+    border-radius: 50%;
+    background: #fff0f7;
+    border: 5px solid #fff;
+}
+
+.cake-plate {
+    position: absolute;
+    bottom: 20px;
+    left: 5px;
+    width: 290px;
+    height: 25px;
+    border-radius: 50%;
+    background: #c9a8d4;
+}
+
+.cake-candles {
+    position: absolute;
+    z-index: 4;
+    top: 15px;
+    left: 95px;
+    display: flex;
+    gap: 28px;
+}
+
+.candle {
+    height: 52px;
+    width: 13px;
+    background: repeating-linear-gradient(
+        45deg,
+        #fff 0 5px,
+        #df76a4 5px 10px
+    );
+    border-radius: 4px;
+    position: relative;
+}
+
+.candle i {
+    position: absolute;
+    top: -19px;
+    left: 1px;
+    width: 11px;
+    height: 17px;
+    background: #ffb43d;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    box-shadow: 0 0 15px #ffb43d;
+}
+
+.cake-art.cut .layer-one {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transform: translateX(12px) rotate(2deg);
+}
+
+.cake-art.blown .candle i {
+    display: none;
+}
+
+/* =========================================
+   10. CELEBRATION MESSAGES AND EFFECTS
+========================================= */
+
+.final-message {
+    max-width: 900px;
+    font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+    line-height: 1.9;
+    white-space: pre-wrap;
+}
+
+.confetti-area {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.confetti {
+    position: absolute;
+    top: -30px;
+    font-size: clamp(1.3rem, 3vw, 2.2rem);
+    animation: fall 4s linear forwards;
+}
+
+.action-row {
+    margin: 25px 0;
+}
+
+/* =========================================
+   11. SHARING AND QR CODE
+========================================= */
+
+.share-card,
+.checkout-card {
+    width: min(750px, 100%);
+    padding: clamp(20px, 4vw, 35px);
+    margin: 25px auto;
+    background: #ffffffd9;
+    border: 1px solid #efd9e7;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    color: var(--ink);
+}
+
+.share-card input {
+    margin: 12px 0;
+}
+
+.qr-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20px;
+    margin: 20px auto;
+}
+
+.qr-box img,
+.qr-box canvas {
+    max-width: 100%;
+    height: auto !important;
+}
+
+.demo-warning {
+    padding: 12px;
+    background: #fff3d7;
+    border-radius: 12px;
+    color: #76552a;
+}
+
+.text-button {
+    background: transparent;
+    color: #875776;
+    text-decoration: underline;
+}
+
+/* =========================================
+   12. POSTER DESIGN
+========================================= */
+
+.poster-section {
+    background: linear-gradient(135deg, #fff4f7, #f7f0ff);
+}
+
+.poster-layout {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.8fr) minmax(320px, 1fr);
+    gap: 35px;
+    align-items: start;
+    max-width: 1250px;
+    margin: auto;
+}
+
+.poster-controls {
+    padding: 25px;
+}
+
+.poster-preview {
+    position: relative;
+    min-height: 690px;
+    padding: 35px 25px 28px;
+    border-radius: 28px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    overflow: hidden;
+    border: 8px solid #ffffffa6;
+}
+
+.poster-rose {
+    background:
+        radial-gradient(circle at top, #fff 0 4%, transparent 36%),
+        linear-gradient(155deg, #f8b8cb, #fff0e7 52%, #d8c2ef);
+}
+
+.poster-lavender {
+    background: linear-gradient(145deg, #d6c5f4, #fff1f8, #c9d8ff);
+}
+
+.poster-peach {
+    background: linear-gradient(145deg, #ffd4b9, #fff3d9, #f4b9cf);
+}
+
+.poster-night {
+    background: linear-gradient(145deg, #24203e, #62476f, #d38ca6);
+    color: white;
+}
+
+.poster-stars {
+    font-size: 1.7rem;
+    letter-spacing: 0.3em;
+}
+
+.character-art {
+    width: 230px;
+    height: 220px;
+    margin: 14px auto 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.character-art svg {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#posterCharacterArt {
+    display: flex;
+    visibility: visible;
+    width: 100%;
+    max-width: 420px;
+    height: 350px;
+    margin: 12px auto;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    flex-shrink: 0;
+}
+
+#posterCharacterArt svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.poster-occasion {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 700;
+    color: #a54e79;
+}
+
+.poster-preview h3 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 5px 0;
+}
+
+#posterName {
+    display: block;
+    min-height: 1.2em;
+}
+
+.poster-quote {
+    max-width: 420px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+}
+
+#posterQuote {
+    display: block;
+    min-height: 1.2em;
+    white-space: pre-wrap;
+}
+
+.poster-sender {
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.poster-qr-wrap {
+    margin: 18px 0 0;
+    padding: 10px;
+    background: #fff;
+    border-radius: 12px;
+    color: #51394f;
+}
+
+.poster-qr {
+    min-height: 10px;
+}
+
+.poster-qr img,
+.poster-qr canvas {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+}
+
+.poster-qr-wrap small {
+    display: block;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    margin-top: 5px;
+}
+
+.poster-footer {
+    margin-top: auto;
+    padding-top: 20px;
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+}
+
+/* =========================================
+   13. PRICING
+========================================= */
+
+.pricing {
+    text-align: center;
+    background: #fffafc;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 380px));
+    justify-content: center;
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.price-card {
+    background: #fff;
+    padding: 35px;
+    border: 1px solid #efdce6;
+    border-radius: 25px;
+    box-shadow: var(--shadow);
+}
+
+.price-card.featured {
+    background: linear-gradient(145deg, #fff0f6, #f0e6ff);
+}
+
+.price {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--rose);
+    margin: 12px;
+}
+
+/* =========================================
+   14. FOOTER
+========================================= */
+
+footer {
+    text-align: center;
+    padding: 28px 18px;
+    background: #f9edf4;
+}
+
+footer p {
+    margin: 5px;
+}
+
+/* =========================================
+   15. RECIPIENT INSTRUCTIONS
+========================================= */
+
+.recipient-instruction {
+    max-width: 680px;
+    margin: 18px auto;
+    padding: 14px 18px;
+    border: 1px dashed rgba(130, 75, 110, 0.45);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.72);
+    color: #593c55;
+    line-height: 1.65;
+    text-align: center;
+}
+
+.recipient-instruction strong {
+    color: #8b426e;
+}
+
+/* =========================================
+   16. MUSIC EDITOR
+========================================= */
+
+.music-editor {
+    max-width: 600px;
+    margin: 25px auto;
+    padding: 25px;
+    background: linear-gradient(135deg, #fff0f6, #f3e8ff);
+    border: 1px solid #f3c4dc;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(100, 40, 80, 0.12);
+    font-family: Arial, sans-serif;
+}
+
+.music-editor h3 {
+    color: #9d276b;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.music-editor p {
+    color: #6b5263;
+    line-height: 1.6;
+}
+
+.music-editor label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    color: #493343;
+    font-weight: bold;
+}
+
+.music-editor input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    background: white;
+    border: 1px dashed #cf78a7;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.music-editor input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e0b6d0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.music-editor input[type="range"] {
+    width: 100%;
+    accent-color: #c43d85;
+    cursor: pointer;
+}
+
+.music-controls {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.music-editor button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    background: #c43d85;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.music-editor button:hover {
+    background: #982760;
+}
+
+#musicStatus {
+    margin-top: 18px;
+    padding: 12px;
+    background: white;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+#useMusic {
+    width: 100%;
+    margin-top: 12px;
+    background: #8138a5;
+}
+
+#useMusic:hover {
+    background: #622580;
+}
+
+/* =========================================
+   17. MUSIC WAVEFORM TIMELINE
+========================================= */
+
+.waveform-wrapper {
+    position: relative;
+    width: 100%;
+    height: 95px;
+    margin: 20px 0 8px;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #fff0f6;
+    touch-action: pan-y;
+}
+
+.waveform-bars,
+.selection-bars {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2px;
+    width: 100%;
+    height: 100%;
+}
+
+.waveform-bar {
+    flex: 1;
+    min-width: 2px;
+    max-width: 5px;
+    border-radius: 5px;
+    background: #d99ab8;
+    transition: background 0.1s;
+}
+
+.waveform-bar.waveform-played {
+    background: #a34d7b;
+}
+
+.selection-box {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #e34f91;
+    border-radius: 8px;
+    background: rgba(255, 105, 180, 0.15);
+    cursor: grab;
+    touch-action: none;
+}
+
+.selection-box:active {
+    cursor: grabbing;
+}
+
+.selection-bars {
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.selection-bars .waveform-bar {
+    background: #e34f91;
+}
+
+.waveform-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 12px;
+    background: #e34f91;
+    cursor: ew-resize;
+    z-index: 2;
+    touch-action: none;
+}
+
+.waveform-handle-left {
+    left: 0;
+    border-radius: 6px 0 0 6px;
+}
+
+.waveform-handle-right {
+    right: 0;
+    border-radius: 0 6px 6px 0;
+}
+
+.waveform-handle::after {
+    content: "";
+    position: absolute;
+    top: 35%;
+    left: 4px;
+    width: 3px;
+    height: 30%;
+    border-radius: 3px;
+    background: white;
+}
+
+.music-time {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    font-size: 13px;
+}
+
+.music-player {
+    width: 100%;
+}
+
+.music-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    overflow-wrap: anywhere;
+}
+
+.music-icon {
+    font-size: 28px;
+}
+
+.music-info small {
+    display: block;
+    margin-top: 4px;
+}
+
+.trim-section,
+.volume-section {
+    display: grid;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.trim-section input,
+.volume-section input {
+    width: 100%;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.use-music-button {
+    width: 100%;
+    margin-top: 18px;
+}
+
+/* =========================================
+   18. ANIMATIONS
+========================================= */
+
+@keyframes float {
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(600deg);
+        opacity: 0.15;
+    }
+}
+
+/* =========================================
+   19. TABLET RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 800px) {
+    .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 0.82rem;
+    }
+
+    .poster-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .poster-preview {
+        min-height: 650px;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 80vh;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   20. MOBILE RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 520px) {
+    html {
+        font-size: 16px;
+    }
+
+    .page-section {
+        padding: 55px 16px;
+    }
+
+    .experience-stage {
+        min-height: 100svh;
+        padding: 28px 14px 40px;
+    }
+
+    #memoryGallery {
+        grid-template-columns: 1fr;
+    }
+
+    #memoryGallery .memory-item img {
+        max-height: 65vh;
+    }
+
+    .button {
+        width: 100%;
+        padding: 15px 18px;
+    }
+
+    .button-row {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .button-row .button {
+        width: 100%;
+    }
+
+    .envelope-art {
+        transform: scale(0.9);
+        margin: 20px auto;
+    }
+
+    .cake-art {
+        transform: scale(0.85);
+        margin: 20px auto;
+    }
+
+    .poster-preview {
+        min-height: 620px;
+        padding: 25px 15px;
+    }
+
+    .character-art {
+        height: 190px;
+    }
+
+    #posterCharacterArt {
+        height: 290px;
+    }
+
+    .music-editor {
+        padding: 18px;
+    }
+
+    .music-controls {
+        flex-wrap: wrap;
+    }
+
+    .music-controls button {
+        flex: 1;
+    }
+
+    .waveform-wrapper {
+        height: 80px;
+    }
+}
